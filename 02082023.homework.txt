@@ -1,0 +1,71 @@
+use homework
+
+db.users.insertMany([
+  { id: 1, firstname: "Анатолий", lastname: "Ушанов", age: 28, gender: "m" },
+  { id: 2, firstname: "Светлана", lastname: "Демидова", age: 25, gender: "f" },
+  { id: 3, firstname: "Никита", lastname: "Иванов", age: 33, gender: "m" },
+  { id: 4, firstname: "Ольга", lastname: "Петрова", age: 22, gender: "f" }
+])
+switched to db homework
+db.workers.insertMany([
+  { id: 1, firstname: "Петр", lastname: "Сергеев", position: "CEO", salary: 7000 },
+  { id: 2, firstname: "Виктор", lastname: "Семенов", position: "Web-developer", salary: 5000 },
+  { id: 3, firstname: "Никита", lastname: "Петров", position: "Assistant", salary: 3500 },
+  { id: 4, firstname: "Инна", lastname: "Орлова", position: "Accountant", salary: 4500 }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64ca36925b4d3fd61079a989"),
+    '1': ObjectId("64ca36925b4d3fd61079a98a"),
+    '2': ObjectId("64ca36925b4d3fd61079a98b"),
+    '3': ObjectId("64ca36925b4d3fd61079a98c")
+  }
+}
+db.users.insertMany([
+  { id: 1, firstname: "Анатолий", lastname: "Ушанов", age: 28, gender: "m" },
+  { id: 2, firstname: "Светлана", lastname: "Демидова", age: 25, gender: "f" },
+  { id: 3, firstname: "Никита", lastname: "Иванов", age: 33, gender: "m" },
+  { id: 4, firstname: "Ольга", lastname: "Петрова", age: 22, gender: "f" }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64ca36b25b4d3fd61079a98d"),
+    '1': ObjectId("64ca36b25b4d3fd61079a98e"),
+    '2': ObjectId("64ca36b25b4d3fd61079a98f"),
+    '3': ObjectId("64ca36b25b4d3fd61079a990")
+  }
+}
+db.fruits.insertMany([
+  { id: 1, title: "Apple", price: 280, count: 4 },
+  { id: 2, title: "Lemon", price: 300, count: 8 },
+  { id: 3, title: "Lime", price: 500, count: 3 },
+  { id: 4, title: "Orange", price: 200, count: 8 }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64ca36c55b4d3fd61079a991"),
+    '1': ObjectId("64ca36c55b4d3fd61079a992"),
+    '2': ObjectId("64ca36c55b4d3fd61079a993"),
+    '3': ObjectId("64ca36c55b4d3fd61079a994")
+  }
+}
+db.vegetables.insertMany([
+  { id: 1, title: "Potato", price: 370, count: 5, country: "Germany" },
+  { id: 2, title: "Onion", price: 320, count: 3, country: "Poland" },
+  { id: 3, title: "Tomato", price: 210, count: 9, country: "Spain" },
+  { id: 4, title: "Carrot", price: 280, count: 4, country: "France" }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64ca36df5b4d3fd61079a995"),
+    '1': ObjectId("64ca36df5b4d3fd61079a996"),
+    '2': ObjectId("64ca36df5b4d3fd61079a997"),
+    '3': ObjectId("64ca36df5b4d3fd61079a998")
+  }
+}
+Atlas atlas-xceizl-shard-0 [primary] homework
+
