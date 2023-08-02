@@ -1,0 +1,86 @@
+use homework005
+switched to db homework005
+db.users.insertMany([
+  { id: 1, name: "Анатолий", age: 28, gender: "m" },
+  { id: 2, name: "Светлана", age: 25, gender: "f" },
+  { id: 3, name: "Никита", age: 33, gender: "m" },
+  { id: 4, name: "Ольга", age: 22, gender: "f" }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64ca48c65b4d3fd61079a9b1"),
+    '1': ObjectId("64ca48c65b4d3fd61079a9b2"),
+    '2': ObjectId("64ca48c65b4d3fd61079a9b3"),
+    '3': ObjectId("64ca48c65b4d3fd61079a9b4")
+  }
+}
+db.users.find({ gender: "f" });
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b2"),
+  id: 2,
+  name: 'Светлана',
+  age: 25,
+  gender: 'f'
+}
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b4"),
+  id: 4,
+  name: 'Ольга',
+  age: 22,
+  gender: 'f'
+}
+db.users.find({ $or: [{ gender: "f" }, { age: { $gt: 30 } }] });
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b2"),
+  id: 2,
+  name: 'Светлана',
+  age: 25,
+  gender: 'f'
+}
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b3"),
+  id: 3,
+  name: 'Никита',
+  age: 33,
+  gender: 'm'
+}
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b4"),
+  id: 4,
+  name: 'Ольга',
+  age: 22,
+  gender: 'f'
+}
+db.users.find({ name: { $in: ["Анатолий", "Дмитрий", "Ольга", "Семен"] } });
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b1"),
+  id: 1,
+  name: 'Анатолий',
+  age: 28,
+  gender: 'm'
+}
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b4"),
+  id: 4,
+  name: 'Ольга',
+  age: 22,
+  gender: 'f'
+}
+db.users.findOne({ id: 3 });
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b3"),
+  id: 3,
+  name: 'Никита',
+  age: 33,
+  gender: 'm'
+}
+db.users.find({ age: { $gte: 30, $lte: 40 } });
+{
+  _id: ObjectId("64ca48c65b4d3fd61079a9b3"),
+  id: 3,
+  name: 'Никита',
+  age: 33,
+  gender: 'm'
+}
+
